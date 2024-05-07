@@ -13,16 +13,31 @@ body {
 
 /* 头部 */
 header {
-    background-color: #0a467f;
-    color: #ffffff;
-    padding: 20px 0;
+    background: linear-gradient(120deg, #009fff, #ec2f4b);
+    color: white;
     text-align: center;
+    padding: 50px 20px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 24px;
+    position: relative;
+    inline-size: fit-content;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }
+
+header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background: white;
+    transform: translateX(-50%);
+}
+
+
 
 /* 导航 */
 nav {
@@ -150,4 +165,11 @@ img {
         margin-bottom: 10px;
     }
 }
+
+nav a.active {
+    color: #4CAF50;  /* 使用明亮的绿色来标示活动链接，你可以选择适合你网站风格的颜色 */
+    font-weight: bold;  /* 可选，增加字体的粗细以提高可读性 */
+}
+
+
 
