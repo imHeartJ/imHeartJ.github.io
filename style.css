@@ -1,39 +1,69 @@
-/* 全局样式 */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
+/* 基础重置 */
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
-    background: #f4f4f9;
 }
 
-/* 头部和页脚 */
-header, footer {
-    background-color: #e8eaf6;
-    color: #555;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+    line-height: 1.6;
+}
+
+/* 头部 */
+header {
+    background-color: #0a467f;
+    color: #ffffff;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
 }
 
-/* 导航菜单 */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* 导航 */
 nav {
-    background: #fff;
-    text-align: center;
+    background-color: #333;
     padding: 10px 0;
+    text-align: center;
 }
 
 nav a {
-    color: #555;
+    color: white;
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
 }
 
-/* 主要内容区域 */
+/* 主内容区 */
 main {
+    background-color: #ffffff;
     padding: 20px;
-    min-height: 80vh;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* 页脚 */
+footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* 列表样式 */
+.project-list li {
+    background: #e9ecef;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
 
 /* 图片风格 */
 img {
@@ -105,4 +135,19 @@ img {
     background: #e9ecef;
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: #fff;
+    }
+
+    .main-content, .company-info, .slider {
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
 
