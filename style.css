@@ -49,32 +49,40 @@ img {
     line-height: 1.6;
 }
 
+/* 主要区域布局 */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 公司简介样式 */
+.company-info {
+    width: 30%;
+    padding: 20px;
+}
+
 /* 幻灯片样式 */
 .slider {
-    width: 60%;  /* 幻灯片宽度调整为页面宽度的80% */
-    margin: 20px auto;  /* 添加自动边距使其居中显示 */
+    width: 70%;
+    margin: 20px 0;
     position: relative;
     overflow: hidden;
 }
 
 .slider img {
     width: 100%;
-    height: auto;  /* 自动调整高度以保持宽高比 */
-    object-fit: cover;  /* 保证图片覆盖整个容器，可能会裁剪部分图片 */
     display: block;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;  /* 初始设为不可见，防止加载时的跳动 */
 }
 
-
-/* 动画效果保持不变 */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+.slider img.active {
+    opacity: 1;  /* 当图片为活动图片时显示 */
 }
+
+/* 调整flex布局下的项目对齐问题 */
+.main-content > * {
+    align-self: center;
+}
+
 
