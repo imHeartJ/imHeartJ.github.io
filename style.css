@@ -51,19 +51,19 @@ img {
 
 /* 幻灯片样式 */
 .slider {
-    width: 100%;
+    width: 80%;  /* 幻灯片宽度调整为页面宽度的80% */
+    margin: 20px auto;  /* 添加自动边距使其居中显示 */
     position: relative;
     overflow: hidden;
-    margin: 20px 0;
 }
 
 .slider img {
-    width: 100%;
+    width: 100%;  /* 图片宽度调整为幻灯片容器的100% */
     display: block;
-    transition: transform 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
-/* 添加动画效果 */
+/* 动画效果保持不变 */
 @keyframes slide {
     0% { transform: translateX(0); }
     20% { transform: translateX(0); }
