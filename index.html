@@ -6,6 +6,7 @@
     <title>首页</title>
     <link rel="stylesheet" href="style.css">
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+	<link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
 </head>
 <body>
     <header>
@@ -29,53 +30,36 @@
 </p>
 		</div>
         <!--img src="path_to_your_image.jpg" alt="公司宣传照片"-->
-		<div class="slider">
-			<button class="prev">&#10094;</button> <!-- 向左箭头 -->
-			<button class="next">&#10095;</button> <!-- 向右箭头 -->
-            <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/0.jpg?raw=true" alt="公司宣传照片1">
-            <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/c.jpg?raw=true" alt="公司宣传照片2">
-            <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/5.jpg?raw=true" alt="公司宣传照片3">
-			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/1.jpg?raw=true" alt="公司宣传照片4">
-			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/2.jpg?raw=true" alt="公司宣传照片5">
-			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/3.jpg?raw=true" alt="公司宣传照片6">
-			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/4.jpg?raw=true" alt="公司宣传照片7">
+		<div class="w3-content w3-display-container">
+			<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+			<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            <img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/0.jpg?raw=true" alt="公司宣传照片1">
+            <img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/c.jpg?raw=true" alt="公司宣传照片2">
+            <img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/5.jpg?raw=true" alt="公司宣传照片3">
+			<img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/1.jpg?raw=true" alt="公司宣传照片4">
+			<img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/2.jpg?raw=true" alt="公司宣传照片5">
+			<img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/3.jpg?raw=true" alt="公司宣传照片6">
+			<img class="mySlides" src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/4.jpg?raw=true" alt="公司宣传照片7">
             <!-- 添加更多图片，确保更新路径和alt文本 -->
         </div>
         <script>
-$(document).ready(function() {
-    var index = 0;
-    var images = $('.slider img');
-    var imageCount = images.length;
-    var interval = 5000; // 5秒切换一次
+    var slideIndex = 1;
+    showDivs(slideIndex);
 
-    images.hide().eq(0).show().addClass('active'); // 初始化，仅显示第一张图片
-
-    function nextImage() {
-        images.eq(index).removeClass('active').fadeOut(1000);
-        index = (index + 1) % imageCount;
-        images.eq(index).fadeIn(1000).addClass('active');
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
     }
 
-    function prevImage() {
-        images.eq(index).removeClass('active').fadeOut(1000);
-        index = (index - 1 + imageCount) % imageCount;
-        images.eq(index).fadeIn(1000).addClass('active');
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
     }
-
-    var sliderInterval = setInterval(nextImage, interval);
-
-    $('.next').click(function() {
-        clearInterval(sliderInterval);
-        nextImage();
-        sliderInterval = setInterval(nextImage, interval);
-    });
-
-    $('.prev').click(function() {
-        clearInterval(sliderInterval);
-        prevImage();
-        sliderInterval = setInterval(nextImage, interval);
-    });
-});
 </script>
 
 
