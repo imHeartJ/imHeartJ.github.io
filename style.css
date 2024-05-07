@@ -86,3 +86,23 @@ img {
 }
 
 
+/* 项目列表样式 */
+.project-list {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-list li {
+    background: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-list li:nth-child(odd) {
+    background: #e9ecef;
+}
+
+
