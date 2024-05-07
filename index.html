@@ -30,6 +30,8 @@
 		</div>
         <!--img src="path_to_your_image.jpg" alt="公司宣传照片"-->
 		<div class="slider">
+			<button class="prev">&#10094;</button> <!-- 向左箭头 -->
+			<button class="next">&#10095;</button> <!-- 向右箭头 -->
             <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/0.jpg?raw=true" alt="公司宣传照片1">
             <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/c.jpg?raw=true" alt="公司宣传照片2">
             <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/5.jpg?raw=true" alt="公司宣传照片3">
@@ -40,19 +42,42 @@
             <!-- 添加更多图片，确保更新路径和alt文本 -->
         </div>
         <script>
-$(document).ready(function(){
+$(document).ready(function() {
     var index = 0;
     var images = $('.slider img');
     var imageCount = images.length;
+    var interval = 5000; // 5秒切换一次
 
     images.hide().eq(0).show().addClass('active'); // 初始化，仅显示第一张图片
-    setInterval(function(){
+
+    function nextImage() {
         images.eq(index).removeClass('active').fadeOut(1000);
         index = (index + 1) % imageCount;
         images.eq(index).fadeIn(1000).addClass('active');
-    }, 3000);
+    }
+
+    function prevImage() {
+        images.eq(index).removeClass('active').fadeOut(1000);
+        index = (index - 1 + imageCount) % imageCount;
+        images.eq(index).fadeIn(1000).addClass('active');
+    }
+
+    var sliderInterval = setInterval(nextImage, interval);
+
+    $('.next').click(function() {
+        clearInterval(sliderInterval);
+        nextImage();
+        sliderInterval = setInterval(nextImage, interval);
+    });
+
+    $('.prev').click(function() {
+        clearInterval(sliderInterval);
+        prevImage();
+        sliderInterval = setInterval(nextImage, interval);
+    });
 });
 </script>
+
 
 	</div>
     </main>

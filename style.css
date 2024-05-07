@@ -36,7 +36,7 @@ header h1::after {
     background: white;
     transform: translateX(-50%);
 }
-
+	
 
 
 /* 导航 */
@@ -171,5 +171,30 @@ nav a.active {
     font-weight: bold;  /* 可选，增加字体的粗细以提高可读性 */
 }
 
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.slider .prev {
+    left: 0;
+}
+
+.slider button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
 
 
