@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
     <link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -25,6 +26,31 @@
 公司始终坚持“质量第一，用户至上，铸造精品，超越自我”的服务宗旨，并以“源以社会、回报社会”为己任，积极参加各项社会公益事业。追求和完善科学管理，以人才战略为依托，以具有高度社会责任感的企业形象面向社会，以优质、创新、诚信服务于各界。团结、诚信、务实、创新的创恒人，以质量、工期、服务为宗旨，以用户满意为目的，在质量中求生存，以职业化、专业化的优秀团队！
 </p>
         <img src="path_to_your_image.jpg" alt="公司宣传照片">
+		<div class="slider">
+            <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/0.jpg?raw=true" alt="公司宣传照片1">
+            <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/c.jpg?raw=true" alt="公司宣传照片2">
+            <img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/5.jpg?raw=true" alt="公司宣传照片3">
+			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/1.jpg?raw=true" alt="公司宣传照片4">
+			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/2.jpg?raw=true" alt="公司宣传照片5">
+			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/3.jpg?raw=true" alt="公司宣传照片6">
+			<img src="https://github.com/imHeartJ/imHeartJ.github.io/blob/main/4.jpg?raw=true" alt="公司宣传照片7">
+            <!-- 添加更多图片，确保更新路径和alt文本 -->
+        </div>
+        <script>
+            $(document).ready(function(){
+                var index = 0;
+                var images = $('.slider img');
+                var imageCount = images.length;
+
+                images.not(':first').hide();
+                setInterval(function(){
+                    images.eq(index).fadeOut(1000);
+                    index = (index + 1) % imageCount;
+                    images.eq(index).fadeIn(1000);
+                }, 3000);
+            });
+        </script>
+		
     </main>
     <footer>
         <p>版权所有 © 黑龙江创恒建筑工程有限公司</p>
