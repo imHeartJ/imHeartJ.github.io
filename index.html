@@ -41,19 +41,20 @@
             <!-- 添加更多图片，确保更新路径和alt文本 -->
         </div>
         <script>
-            $(document).ready(function(){
-                var index = 0;
-                var images = $('.slider img');
-                var imageCount = images.length;
+$(document).ready(function(){
+    var index = 0;
+    var images = $('.slider img');
+    var imageCount = images.length;
 
-                images.not(':first').hide();
-                setInterval(function(){
-                    images.eq(index).fadeOut(1000);
-                    index = (index + 1) % imageCount;
-                    images.eq(index).fadeIn(1000);
-                }, 3000);
-            });
-        </script>
+    images.hide().eq(0).show().addClass('active'); // 初始化，仅显示第一张图片
+    setInterval(function(){
+        images.eq(index).removeClass('active').fadeOut(1000);
+        index = (index + 1) % imageCount;
+        images.eq(index).fadeIn(1000).addClass('active');
+    }, 3000);
+});
+</script>
+
 	</div>
     </main>
     <footer>
