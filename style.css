@@ -100,10 +100,33 @@ img {
     justify-content: space-between;
 }
 
-/* 公司简介样式 */
+/* 公司信息样式调整 */
 .company-info {
-    width: 30%;
+    width: 30%; /* 根据页面布局调整宽度 */
     padding: 20px;
+    background-color: #fff; /* 可以根据需要调整背景颜色 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 添加轻微阴影以提升层次感 */
+    margin-right: 20px; /* 添加右边距 */
+}
+
+.company-info h2 {
+    color: #009fff; /* 主题色调，增加标题的突出度 */
+    margin-bottom: 15px; /* 增加标题下的间距 */
+}
+
+.company-info p {
+    text-align: justify; /* 两端对齐文本 */
+    line-height: 1.8; /* 增加行高改善阅读体验 */
+    margin-bottom: 15px; /* 增加段落间的间距 */
+    font-size: 16px; /* 调整字体大小 */
+}
+
+.company-info p:first-letter {
+    float: left;
+    font-size: 26px; /* 首字母放大效果 */
+    line-height: 1;
+    padding-right: 8px;
+    color: #ec2f4b; /* 首字母颜色 */
 }
 
 /* 幻灯片样式 */
@@ -125,9 +148,14 @@ img {
     opacity: 1;  /* 当图片为活动图片时显示 */
 }
 
-/* 调整flex布局下的项目对齐问题 */
-.main-content > * {
-    align-self: center;
+/* 调整为主要内容区域更具吸引力 */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f9; /* 轻色背景 */
+    border-radius: 8px; /* 边角圆润 */
+    margin-top: 20px; /* 与导航栏保持一定距离 */
 }
 
 
